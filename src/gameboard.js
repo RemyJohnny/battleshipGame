@@ -63,6 +63,7 @@ class Gameboard {
         this.Board[row][col] = "o";
       }
     });
+    ship.setLocation(cords);
     this.ships.push(ship);
     return true;
   }

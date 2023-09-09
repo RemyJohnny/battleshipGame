@@ -4,6 +4,7 @@ function Ship(name, len) {
     length: len,
     hits: 0,
     isSunk: false,
+    location: [],
 
     Hit() {
       this.hits += 1;
@@ -13,6 +14,9 @@ function Ship(name, len) {
       if (this.hits >= this.length) {
         this.isSunk = true;
       }
+    },
+    setLocation(cords) {
+      this.location = cords;
     },
   };
 }

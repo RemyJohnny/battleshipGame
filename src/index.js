@@ -11,22 +11,14 @@ const Control = require("./controller.js");
 //game.playRound(computer(game.enemy));
 console.log(game.players);
 
-// //player1.gameboard.receiveAttack([0, 1]);
-// player2.attack(player1, [0, 1]);
-// //player1.gameboard.receiveAttack([9, 9]);
-// player2.attack(player1, [9, 9]);
-// //player1.gameboard.receiveAttack([0, 0]);
-// player2.attack(player1, [0, 0]);
-// //player1.gameboard.receiveAttack([0, 2]);
-// console.log(player2.attack(player1, [0, 2]));
-// //player1.gameboard.receiveAttack(computer(player1));
-// player2.attack(player1, computer(player1));
-// console.log(player1.gameboard.isDefeated);
 const page = document.querySelector(".page");
 const winTab = document.querySelector("#winTab");
 
 page.appendChild(Control.renderBoard(game.players[0]));
 page.appendChild(Control.renderBoard(game.players[1], true));
+
+Control.showShips(game.players[0]);
+//Control.showShips(game.players[1]);
 
 const cells = document.querySelectorAll(".cell");
 const replayBtn = document.querySelector("#replay");
@@ -46,37 +38,3 @@ cells.forEach((cell) => {
 });
 
 replayBtn.addEventListener("click", game.replay, false);
-
-/*  placeShip(ship, row = 0, col = 0, direction = "horizontal") {
-    if (direction === "horizontal") {
-      for (let i = 0; i < ship.length; i += 1) {
-        if (
-          row === undefined ||
-          col === undefined ||
-          this.Board[row][col] !== ""
-        ) {
-          console.log("ship cannot be placed here");
-          return false;
-        }
-        this.Board[row][col] = ship.name;
-        col += 1;
-      }
-      this.ships.push(ship);
-      return true;
-    } else if (direction === "vertical") {
-      for (let i = 0; i < ship.length; i += 1) {
-        if (
-          row === undefined ||
-          col === undefined ||
-          this.Board[row][col] !== ""
-        ) {
-          console.log("ship cannot be placed here");
-          return false;
-        }
-        this.Board[row][col] = ship.name;
-        row += 1;
-      }
-      this.ships.push(ship);
-      return true;
-    }
-  }*/

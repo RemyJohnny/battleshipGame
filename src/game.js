@@ -32,9 +32,9 @@ const Game = (() => {
     // player1.gameboard.placeShip(ship7, 6, 0, "horizontal");
     // player1.gameboard.placeShip(ship8, 7, 0, "horizontal");
 
-    player2.gameboard.placeShip(boat2, 3, 3, "horizontal");
+    //player2.gameboard.placeShip(boat2, 3, 3, "horizontal");
     randomShipPlacement(player1);
-    //randomShipPlacement(player2);
+    randomShipPlacement(player2);
     //randomShipPlacement(player2);
 
     players.push(player1, player2);
@@ -171,11 +171,14 @@ const Game = (() => {
     console.log(players);
     players = [];
     setGame();
+    control.showShips(players[0]);
+    //control.showShips(players[1]);
     console.log(players);
     winTab.close();
   };
 
   setGame();
+
   // players[1].gameboard.clearBoard();
   return {
     playRound,
